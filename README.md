@@ -1,9 +1,15 @@
 # FORK NOTICE
 This is a fork based almost entirely on the spectacular work done by [itachi1706i.](<https://github.com/itachi1706/battery-historian>) This was originally a project maintained by Google, however, it was deprecated in 2022, likely due to the dependency on Python2. This is the version that is hosted at <https://bathist.stellasec.com>. The main usage that I'm aware of is in obtaining detailed reports of battery usage on WearOS devices, as they currently have no such support natively.
 
+The aaron-beck fork is not currently hosted anywhere on the Internet.
+
 # Battery Historian
 
 Battery Historian is a tool to inspect battery related information and events on an Android device running Android 5.0 Lollipop (API level 21) and later, while the device was not plugged in. It allows application developers to visualize system and application level events on a timeline with panning and zooming functionality, easily see various aggregated statistics since the device was last fully charged, and select an application and inspect the metrics that impact battery specific to the chosen application. It also allows an A/B comparison of two bugreports, highlighting differences in key battery related metrics.
+
+Aaron Beck forked stellasec's version and added some changes for his general
+use, primarily increasing the bugreport size from 100mb to 300mb.
+
 
 ## Getting Started
 
@@ -13,13 +19,13 @@ The simple way is to build a local docker image, following these basic steps:
 1. Clone this repository
 2. Build the docker image 
 ```
-docker build . -t battery-historian:stellasec
+docker build . -t battery-historian:aaron-beck
 ```
 3. Run your local version
 ```
-docker run -p 5731:9999 battery-historian:stellasec
+docker run -p 9999:9999 battery-historian:aaron-beck
 ```
-4. Battery Historian is now running on <http://localhost:5731>.
+4. Battery Historian is now running on <http://localhost:9999>.
 
 Can this be run without docker? Probably, but I didn't try it, and quite frankly, neither should you. If you really want to do this, you should be smart enough to read a dockerfile and reverse engineer it.
 
